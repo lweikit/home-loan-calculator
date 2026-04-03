@@ -1,0 +1,16 @@
+'use client';
+
+interface CardProps {
+  title: string;
+  children: React.ReactNode;
+  className?: string;
+}
+
+export default function Card({ title, children, className = '' }: CardProps) {
+  return (
+    <div className={`bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-5 ${className}`}>
+      <h3 className="text-base sm:text-lg font-semibold text-primary mb-3 sm:mb-4">{title}</h3>
+      {children}
+    </div>
+  );
+}

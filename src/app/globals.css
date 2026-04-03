@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-primary-lighter: var(--primary-lighter);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-secondary: var(--secondary);
+}
+
+:root {
+  --primary: #0c8188;        /* HDB teal - text, accents, tables */
+  --primary-dark: #053436;   /* HDB dark teal - header, hero sections */
+  --primary-light: #0EA5A8;  /* Lighter teal for hover */
+  --primary-lighter: #EDF6F7; /* Faint teal wash */
+  --accent: #DB0000;         /* HDB red - logo, CTAs */
+  --accent-light: #E52020;   /* Hover red */
+  --secondary: #FFFFFF;      /* Clean white */
+  --success: #2E7D32;
+  --warning: #F9A825;
+  --danger: #DB0000;
+  --text: #212529;           /* HDB body text */
+  --text-muted: #6c757d;    /* HDB muted text */
+  --border: #DEE2E6;         /* HDB light border */
+  --input-border: #CED4DA;   /* HDB input border */
+}
+
+body {
+  color: var(--text);
+  background: var(--secondary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Dark mode */
+.dark {
+  --primary: #3AACB0;        /* Lifted teal - readable on dark bg */
+  --primary-dark: #053436;   /* Same dark teal for headers in both modes */
+  --primary-light: #5CC5C8;
+  --primary-lighter: #0A1E1F;
+  --accent: #FF4D4D;         /* Warm red for dark mode */
+  --accent-light: #FF6B6B;
+  --secondary: #141414;
+  --text: #E8ECEF;
+  --text-muted: #9CA3AF;
+  --border: #2A2A2A;
+  --input-border: #3F3F3F;
+}
+
+.dark body {
+  background: #0E0E0E;
+  color: #E8ECEF;
+}
+
+input, select {
+  padding: 0.625rem 0.875rem;
+  border: 1.5px solid var(--input-border);
+  border-radius: 0.625rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  background: #F8FAFB;
+  color: var(--text);
+}
+
+.dark input, .dark select {
+  background: #1E293B !important;
+  color: #E2E8F0 !important;
+  border-color: #334155 !important;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(219, 0, 0, 0.1);
+  background: white;
+}
+
+.dark input:focus, .dark select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15);
+  background: #1E293B !important;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Mobile responsive table cells */
+@media (max-width: 640px) {
+  table th, table td {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  table th:first-child, table td:first-child {
+    max-width: 120px;
+  }
+}
